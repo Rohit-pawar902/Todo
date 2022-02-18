@@ -1,0 +1,244 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+}
+
+.container {
+    height: 100%;
+}
+
+.container header {
+    position: sticky;
+    background: rgb(173, 199, 230);
+    box-shadow: 0, 0, 10px rgba(0, 0, 0, 0.1);
+    height: 50px;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.container header .add {
+    /* display: flex;
+    justify-content: flex-end; */
+    margin-left: auto;
+}
+
+.container header .add button {
+    background: rgb(63, 66, 212);
+    border: none;
+    color: rgba(194, 241, 23, 0.925);
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    font-size: 30px;
+    cursor: pointer;
+    outline: 2px solid rgb(206, 147, 21);
+    padding: 1px;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 10px rgb(206, 147, 21, 0.5);
+}
+
+.container main {
+    overflow-y: auto;
+    height: calc(100% - 140px);
+}
+
+.container footer {
+    padding-top: 30px;
+    background-color: tomato;
+    text-align: center;
+    height: 90px;
+}
+
+.add_todo_container {
+    position: fixed;
+    /* background: rgb(251, 255, 192); */
+    background-color: rgba(226, 14, 131, 0.3);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    /* position fixed so neccesary to give pos TLBR(top-left) otherwise it goes and fixed out of the Screen
+      */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* display: none; */
+}
+
+.form_container {
+    /* padding: 40%; */
+    /* border: 5px solid black; */
+    background-color: rgb(233, 181, 36);
+    position: relative;
+}
+
+.form_container {
+    border-radius: 35px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    outline: 5px solid rgba(164, 206, 11, 0.4);
+    outline-offset: 20px;
+    padding: 20px;
+    animation: zoom 200ms ease-in-out;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.form_container .close {
+    /* margin-right: 10px; */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(243, 235, 235, 0.5);
+    cursor: pointer;
+}
+
+.form .heading {
+    /* position: absolute; */
+    padding: 5px;
+    text-align: center;
+    font-size: 30px;
+    font-family: cursive;
+    font-weight: bold;
+    color: rgb(175, 15, 63);
+    /* right: 0px; */
+    /* display: flex-inline;
+    justify-content: center; */
+}
+
+.form button {
+    width: 100%;
+    height: 40px;
+    /* confution doubt h100% */
+    border: none;
+    outline: 2px solid #ccc;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form .input_container {
+    display: flex;
+    /* why thats so */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form .input_container input {
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+    height: 25px;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 15px;
+    box-shadow: 10px -5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.text textarea {
+    width: 100%;
+    height: 200px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    resize: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: 2px solid salmon;
+    box-shadow: 10px -5px 10px rgba(0, 0, 0, 0.3);
+    /* text-decoration: underline dotted; */
+    font-size: x-large;
+    font-weight: bolder;
+    padding: 20px;
+}
+
+#todo_container .todo {
+    position: relative;
+    background-color: aqua;
+    border-radius: 20px;
+    margin: 10px;
+    /* width: 20%; */
+    height: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: zoom 200ms ease-in-out;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+#todo_container .todo .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* height: 10%; */
+    width: 15px;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(243, 235, 235, 0.5);
+    cursor: pointer;
+}
+
+#todo_container .todo .title {
+    display: flex;
+    height: 20%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(59, 178, 247);
+    border-radius: 10px;
+}
+
+main .todo .content {
+    height: 80%;
+    padding: 10px;
+    background-color: blanchedalmond;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow-y: auto;
+}
+
+.container main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
